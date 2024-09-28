@@ -1,0 +1,15 @@
+cmake_minimum_required(VERSION 3.5.0)
+
+project(Ideas VERSION 0.1.0 LANGUAGES C CXX)
+
+add_executable(main
+               src/main.cpp
+               src/sierpinski_triangle.cpp
+               src/sierpinski_carpet.cpp
+               src/fractal_tree.cpp)
+
+set_target_properties(main PROPERTIES LINK_FLAGS "-L${SDL2_LIB}")
+
+target_include_directories(main PUBLIC "${SDL2_INCLUDE}" PRIVATE include)
+
+target_link_libraries(main mingw32 SDL2main SDL2)
