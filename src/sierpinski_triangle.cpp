@@ -2,7 +2,6 @@
 #include <cmath>
 #include <vector>
 
-SDL_FPoint midpoint(SDL_FPoint v1, SDL_FPoint v2);
 void sierpinski(int iter, SDL_Renderer* renderer, SDL_FPoint v1, SDL_FPoint v2, SDL_FPoint v3);
 
 void sierpinski_triangle(SDL_Renderer* renderer) {
@@ -26,10 +25,6 @@ void sierpinski_triangle(SDL_Renderer* renderer) {
 	SDL_RenderGeometry(renderer, nullptr, base.data(), base.size(), nullptr, 0);
 
 	sierpinski(0, renderer, v1, v2, v3);
-}
-
-SDL_FPoint midpoint(SDL_FPoint v1, SDL_FPoint v2) {
-	return {(v1.x + v2.x) / 2, (v1.y + v2.y) / 2};
 }
 
 void sierpinski(int iter, SDL_Renderer* renderer, SDL_FPoint v1, SDL_FPoint v2, SDL_FPoint v3) {

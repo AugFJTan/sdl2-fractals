@@ -1,12 +1,14 @@
 cmake_minimum_required(VERSION 3.5.0)
 
-project(Ideas VERSION 0.1.0 LANGUAGES C CXX)
+project(SDL2_Fractals VERSION 0.1.0 LANGUAGES C CXX)
 
 add_executable(main
                src/main.cpp
+               src/utils.cpp
                src/sierpinski_triangle.cpp
                src/sierpinski_carpet.cpp
-               src/fractal_tree.cpp)
+               src/fractal_tree.cpp
+               src/koch_snowflake.cpp)
 
 set_target_properties(main PROPERTIES LINK_FLAGS "-L${SDL2_LIB}")
 

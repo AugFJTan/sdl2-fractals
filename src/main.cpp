@@ -1,11 +1,11 @@
-#include <SDL2/SDL.h>
-#include <stdio.h>
 #include "fractals.h"
+#include <stdio.h>
 
 void (*fractal_arr[])(SDL_Renderer*) = {
 	sierpinski_triangle,
 	sierpinski_carpet,
 	fractal_tree,
+	koch_snowflake,
 };
 
 void show_fractal(SDL_Renderer* renderer, int fractal_idx) {

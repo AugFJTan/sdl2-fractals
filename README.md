@@ -7,6 +7,7 @@ Available fractals:
 1. Sierpinski triangle
 2. Sierpinski carpet
 3. Fractal tree
+4. Koch snowflake
 
 ## Building
 

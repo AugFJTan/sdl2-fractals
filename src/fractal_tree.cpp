@@ -2,7 +2,6 @@
 #include <cmath>
 #include <vector>
 
-SDL_FPoint transform(SDL_FPoint v, double mat_rot[2][2], SDL_FPoint v_trans);
 void draw_branch(SDL_Renderer* renderer, double theta, SDL_FPoint tip, float length, float width);
 void branch(int iter, SDL_Renderer* renderer, double theta, SDL_FPoint tip, float length, float width);
 
@@ -20,18 +19,6 @@ void fractal_tree(SDL_Renderer* renderer) {
 
 	branch(0, renderer, 0.0, tip, length * 0.8, width * 0.8);
 	branch(0, renderer, 0.0, tip, length * 0.8, width * 0.8);
-}
-
-SDL_FPoint transform(SDL_FPoint v, double mat_rot[2][2], SDL_FPoint v_trans) {
-	SDL_FPoint v_rot;
-	v_rot.x = mat_rot[0][0] * v.x + mat_rot[0][1] * v.y;
-	v_rot.y = mat_rot[1][0] * v.x + mat_rot[1][1] * v.y;
-
-	SDL_FPoint v_res;
-	v_res.x = v_rot.x + v_trans.x;
-	v_res.y = v_rot.y + v_trans.y;
-
-	return v_res;
 }
 
 void draw_branch(SDL_Renderer* renderer, double theta, SDL_FPoint tip, float length, float width) {
