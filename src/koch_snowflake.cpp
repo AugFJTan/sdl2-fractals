@@ -26,7 +26,7 @@ void koch_snowflake(SDL_Renderer* renderer) {
 
 	draw_triangle(0, renderer, v1, v2, hypotenuse / 3, 120 * M_PI / 180.0);
 	draw_triangle(0, renderer, v2, v3, hypotenuse / 3, 0);
-	draw_triangle(0, renderer, v3, v1, hypotenuse / 3, 240 * M_PI / 180.0);
+	draw_triangle(0, renderer, v3, v1, hypotenuse / 3, -120 * M_PI / 180.0);
 }
 
 void draw_triangle(int iter, SDL_Renderer* renderer, SDL_FPoint v1, SDL_FPoint v2, float length, float theta) {
@@ -35,8 +35,8 @@ void draw_triangle(int iter, SDL_Renderer* renderer, SDL_FPoint v1, SDL_FPoint v
 
 	float height = length * cos(30.0 * M_PI / 180.0);
 
-	SDL_FPoint va = {0, height};
-	SDL_FPoint vb = {-length/2, 0};
+	SDL_FPoint va = {-length/2, 0};
+	SDL_FPoint vb = {0, height};
 	SDL_FPoint vc = {length/2, 0};
 
 	double mat_rot[2][2] = {
@@ -60,8 +60,16 @@ void draw_triangle(int iter, SDL_Renderer* renderer, SDL_FPoint v1, SDL_FPoint v
 
 	iter++;
 
-	draw_triangle(iter, renderer, va, vc, length / 3, theta - 60 * M_PI / 180.0);
-	draw_triangle(iter, renderer, vb, va, length / 3, theta + 60 * M_PI / 180.0);
-	draw_triangle(iter, renderer, v1, vb, length / 3, theta);
+	/*
+		Vertex layout:
+		           vb
+		          /  \
+		         *    *
+		        /      \
+		v1--*--va      vc--*--v2
+	*/
+	draw_triangle(iter, renderer, v1, va, length / 3, theta);
+	draw_triangle(iter, renderer, va, vb, length / 3, theta + 60 * M_PI / 180.0);
+	draw_triangle(iter, renderer, vb, vc, length / 3, theta - 60 * M_PI / 180.0);
 	draw_triangle(iter, renderer, vc, v2, length / 3, theta);
 }
