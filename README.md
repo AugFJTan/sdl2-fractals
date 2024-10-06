@@ -8,6 +8,7 @@ Available fractals:
 2. Sierpinski carpet
 3. Fractal tree
 4. Koch snowflake
+5. Mandelbrot set
 
 ## Building
 

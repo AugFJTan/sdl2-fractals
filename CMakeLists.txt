@@ -8,7 +8,8 @@ add_executable(main
                src/sierpinski_triangle.cpp
                src/sierpinski_carpet.cpp
                src/fractal_tree.cpp
-               src/koch_snowflake.cpp)
+               src/koch_snowflake.cpp
+               src/mandelbrot_set.cpp)
 
 set_target_properties(main PROPERTIES LINK_FLAGS "-L${SDL2_LIB}")
 

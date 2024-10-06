@@ -11,5 +11,6 @@ void sierpinski_triangle(SDL_Renderer* renderer);
 void sierpinski_carpet(SDL_Renderer* renderer);
 void fractal_tree(SDL_Renderer* renderer);
 void koch_snowflake(SDL_Renderer* renderer);
+void mandelbrot_set(SDL_Renderer* renderer);
 
 #endif

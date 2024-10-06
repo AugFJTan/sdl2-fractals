@@ -6,9 +6,11 @@ void (*fractal_arr[])(SDL_Renderer*) = {
 	sierpinski_carpet,
 	fractal_tree,
 	koch_snowflake,
+	mandelbrot_set,
 };
 
 void show_fractal(SDL_Renderer* renderer, int fractal_idx) {
+	SDL_SetRenderDrawColor(renderer, 0x7f, 0x7f, 0x7f, 0xff);  // Background
 	SDL_RenderClear(renderer);
 	fractal_arr[fractal_idx](renderer);
 	SDL_RenderPresent(renderer);
@@ -38,8 +40,6 @@ int main(int argc, char* args[]) {
 		fprintf(stderr, "Could not create renderer: %s\n", SDL_GetError());
 		return 1;
 	}
-
-	SDL_SetRenderDrawColor(renderer, 0x7f, 0x7f, 0x7f, 0xff);  // Background
 
 	int num_fractals = sizeof(fractal_arr) / sizeof(*fractal_arr);
 	int fractal_idx = 0;
