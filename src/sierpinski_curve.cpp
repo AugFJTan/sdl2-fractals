@@ -30,7 +30,7 @@ void sierpinski_curve(SDL_Renderer* renderer) {
 }
 
 void sierpinski(int iter, std::vector<SDL_FPoint> &points, SDL_FPoint v1, SDL_FPoint v2, SDL_FPoint v3) {
-	if (iter == 9) {
+	if (iter == 11) {
 		points.push_back(centroid(v1, v2, v3));
 		return;
 	}
