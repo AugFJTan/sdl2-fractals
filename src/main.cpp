@@ -4,6 +4,7 @@
 void (*fractal_arr[])(SDL_Renderer*) = {
 	sierpinski_triangle,
 	sierpinski_carpet,
+	sierpinski_curve,
 	fractal_tree,
 	koch_snowflake,
 	mandelbrot_set,

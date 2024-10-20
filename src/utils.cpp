@@ -15,3 +15,10 @@ SDL_FPoint transform(SDL_FPoint v, double mat_rot[2][2], SDL_FPoint v_trans) {
 
 	return v_res;
 }
+
+SDL_FPoint centroid(SDL_FPoint v1, SDL_FPoint v2, SDL_FPoint v3) {
+	SDL_FPoint vc;
+	vc.x = (v1.x + v2.x + v3.x) / 3;
+	vc.y = (v1.y + v2.y + v3.y) / 3;
+	return vc;
+}

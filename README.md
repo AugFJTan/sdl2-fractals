@@ -6,9 +6,10 @@ Available fractals:
 
 1. Sierpinski triangle
 2. Sierpinski carpet
-3. Fractal tree
-4. Koch snowflake
-5. Mandelbrot set
+3. Sierpinski curve
+4. Fractal tree
+5. Koch snowflake
+6. Mandelbrot set
 
 ## Building
 
