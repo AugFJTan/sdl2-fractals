@@ -13,5 +13,6 @@ void sierpinski_curve(SDL_Renderer* renderer);
 void fractal_tree(SDL_Renderer* renderer);
 void koch_snowflake(SDL_Renderer* renderer);
 void mandelbrot_set(SDL_Renderer* renderer);
+void box_factal(SDL_Renderer* renderer);
 
 #endif

@@ -10,7 +10,8 @@ add_executable(main
                src/sierpinski_curve.cpp
                src/fractal_tree.cpp
                src/koch_snowflake.cpp
-               src/mandelbrot_set.cpp)
+               src/mandelbrot_set.cpp
+               src/box_fractal.cpp)
 
 set_target_properties(main PROPERTIES LINK_FLAGS "-L${SDL2_LIB}")
 

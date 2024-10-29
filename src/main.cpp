@@ -8,6 +8,7 @@ void (*fractal_arr[])(SDL_Renderer*) = {
 	fractal_tree,
 	koch_snowflake,
 	mandelbrot_set,
+	box_factal,
 };
 
 void show_fractal(SDL_Renderer* renderer, int fractal_idx) {

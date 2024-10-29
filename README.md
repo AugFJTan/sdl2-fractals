@@ -10,6 +10,7 @@ Available fractals:
 4. Fractal tree
 5. Koch snowflake
 6. Mandelbrot set
+7. Box fractal
 
 ## Building
 
