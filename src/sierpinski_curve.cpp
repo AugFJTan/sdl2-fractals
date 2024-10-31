@@ -21,12 +21,10 @@ void sierpinski_curve(SDL_Renderer* renderer) {
 	sierpinski(0, points, v2, v1, v4);
 	sierpinski(0, points, v3, v4, v1);
 
-	for (int i = 0; i < points.size(); i++) {
-		if (i < points.size() - 1)
-			SDL_RenderDrawLineF(renderer, points[i].x, points[i].y, points[i+1].x, points[i+1].y);
-		else
-			SDL_RenderDrawLineF(renderer, points[i].x, points[i].y, points[0].x, points[0].y);
-	}
+	// Connect last point to first point
+	points.push_back(points[0]);
+
+	SDL_RenderDrawLinesF(renderer, points.data(), points.size());
 }
 
 void sierpinski(int iter, std::vector<SDL_FPoint> &points, SDL_FPoint v1, SDL_FPoint v2, SDL_FPoint v3) {
