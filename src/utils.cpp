@@ -1,4 +1,5 @@
 #include "utils.h"
+#include <cmath>
 
 SDL_FPoint midpoint(SDL_FPoint v1, SDL_FPoint v2) {
 	return {(v1.x + v2.x) / 2, (v1.y + v2.y) / 2};
@@ -21,4 +22,8 @@ SDL_FPoint centroid(SDL_FPoint v1, SDL_FPoint v2, SDL_FPoint v3) {
 	vc.x = (v1.x + v2.x + v3.x) / 3;
 	vc.y = (v1.y + v2.y + v3.y) / 3;
 	return vc;
+}
+
+float magnitude(SDL_FPoint v1, SDL_FPoint v2) {
+	return sqrt(pow(v1.x - v2.x, 2) + pow(v1.y - v2.y, 2));
 }

@@ -11,6 +11,7 @@ Available fractals:
 5. Koch snowflake
 6. Mandelbrot set
 7. Box fractal
+8. Dragon curve
 
 ## Building
 
