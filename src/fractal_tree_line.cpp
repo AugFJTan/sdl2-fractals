@@ -1,6 +1,5 @@
 #include "fractals.h"
 #include <cmath>
-#include <vector>
 
 void branch(int iter, SDL_Renderer* renderer, double theta, SDL_FPoint tip, float length);
 
