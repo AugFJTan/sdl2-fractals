@@ -8,7 +8,8 @@ add_executable(main
                src/sierpinski_triangle.cpp
                src/sierpinski_carpet.cpp
                src/sierpinski_curve.cpp
-               src/fractal_tree.cpp
+               src/fractal_tree_line.cpp
+               src/fractal_tree_shape.cpp
                src/koch_snowflake.cpp
                src/mandelbrot_set.cpp
                src/box_fractal.cpp

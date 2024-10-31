@@ -5,7 +5,7 @@
 void draw_branch(SDL_Renderer* renderer, double theta, SDL_FPoint tip, float length, float width);
 void branch(int iter, SDL_Renderer* renderer, double theta, SDL_FPoint tip, float length, float width);
 
-void fractal_tree(SDL_Renderer* renderer) {
+void fractal_tree_shape(SDL_Renderer* renderer) {
 	float length = 100.0;
 	float width = 20.0;
 

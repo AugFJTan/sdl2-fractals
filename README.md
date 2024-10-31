@@ -8,6 +8,8 @@ Available fractals:
 2. Sierpinski carpet
 3. Sierpinski curve
 4. Fractal tree
+   - Line version
+   - Shape version
 5. Koch snowflake
 6. Mandelbrot set
 7. Box fractal
