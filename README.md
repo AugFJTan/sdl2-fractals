@@ -11,6 +11,8 @@ Available fractals:
    - Line version
    - Shape version
 5. Koch snowflake
+   - Line version
+   - Shape version
 6. Mandelbrot set
 7. Box fractal
 8. Dragon curve

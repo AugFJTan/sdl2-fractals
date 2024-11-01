@@ -2,9 +2,9 @@
 #include <cmath>
 #include <vector>
 
-void draw_triangle(int iter, SDL_Renderer* renderer, SDL_FPoint v1, SDL_FPoint v2, float length, float theta);
+void edge(int iter, SDL_Renderer* renderer, SDL_FPoint v1, SDL_FPoint v2, float theta);
 
-void koch_snowflake(SDL_Renderer* renderer) {
+void koch_snowflake_shape(SDL_Renderer* renderer) {
 	float hypotenuse = 360.0;
 	float height = hypotenuse * cos(30.0 * M_PI / 180.0);
 	float width = hypotenuse;
@@ -24,20 +24,21 @@ void koch_snowflake(SDL_Renderer* renderer) {
 	};
 	SDL_RenderGeometry(renderer, nullptr, base.data(), base.size(), nullptr, 0);
 
-	draw_triangle(0, renderer, v1, v2, hypotenuse / 3, 120 * M_PI / 180.0);
-	draw_triangle(0, renderer, v2, v3, hypotenuse / 3, 0);
-	draw_triangle(0, renderer, v3, v1, hypotenuse / 3, -120 * M_PI / 180.0);
+	edge(0, renderer, v1, v2, 120 * M_PI / 180.0);
+	edge(0, renderer, v2, v3, 0);
+	edge(0, renderer, v3, v1, -120 * M_PI / 180.0);
 }
 
-void draw_triangle(int iter, SDL_Renderer* renderer, SDL_FPoint v1, SDL_FPoint v2, float length, float theta) {
+void edge(int iter, SDL_Renderer* renderer, SDL_FPoint v1, SDL_FPoint v2, float theta) {
 	if (iter == 4)
 		return;
 
-	float height = length * cos(30.0 * M_PI / 180.0);
+	float edge_length = magnitude(v1, v2) / 3;
+	float height = edge_length * cos(30.0 * M_PI / 180.0);
 
-	SDL_FPoint va = {-length/2, 0};
+	SDL_FPoint va = {-edge_length/2, 0};
 	SDL_FPoint vb = {0, height};
-	SDL_FPoint vc = {length/2, 0};
+	SDL_FPoint vc = {edge_length/2, 0};
 
 	double mat_rot[2][2] = {
 		{cos(theta), -sin(theta)},
@@ -68,8 +69,8 @@ void draw_triangle(int iter, SDL_Renderer* renderer, SDL_FPoint v1, SDL_FPoint v
 		        /      \
 		v1--*--va      vc--*--v2
 	*/
-	draw_triangle(iter, renderer, v1, va, length / 3, theta);
-	draw_triangle(iter, renderer, va, vb, length / 3, theta + 60 * M_PI / 180.0);
-	draw_triangle(iter, renderer, vb, vc, length / 3, theta - 60 * M_PI / 180.0);
-	draw_triangle(iter, renderer, vc, v2, length / 3, theta);
+	edge(iter, renderer, v1, va, theta);
+	edge(iter, renderer, va, vb, theta + 60 * M_PI / 180.0);
+	edge(iter, renderer, vb, vc, theta - 60 * M_PI / 180.0);
+	edge(iter, renderer, vc, v2, theta);
 }
