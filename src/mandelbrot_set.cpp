@@ -5,7 +5,7 @@ SDL_FPoint to_mandelbrot_scale(SDL_FPoint p);
 void mandelbrot_set(SDL_Renderer* renderer) {
 	int max_iteration = 100;
 
-	SDL_SetRenderDrawColor(renderer, 0xff, 0xff, 0xff, 0xff);
+	SDL_SetRenderDrawColor(renderer, 0x00, 0x00, 0x00, 0xff);
 
 	for (int py = 0; py < SCREEN_HEIGHT; py++) {
 		for (int px = 0; px < SCREEN_WIDTH; px++) {
