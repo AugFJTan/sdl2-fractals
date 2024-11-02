@@ -16,6 +16,7 @@ Available fractals:
 6. Mandelbrot set
 7. Box fractal
 8. Dragon curve
+9. Barnsley fern
 
 ## Building
 

@@ -17,5 +17,6 @@ void koch_snowflake_shape(SDL_Renderer* renderer);
 void mandelbrot_set(SDL_Renderer* renderer);
 void box_factal(SDL_Renderer* renderer);
 void dragon_curve(SDL_Renderer* renderer);
+void barnsley_fern(SDL_Renderer* renderer);
 
 #endif

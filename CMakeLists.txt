@@ -14,7 +14,8 @@ add_executable(main
                src/koch_snowflake_shape.cpp
                src/mandelbrot_set.cpp
                src/box_fractal.cpp
-               src/dragon_curve.cpp)
+               src/dragon_curve.cpp
+               src/barnsley_fern.cpp)
 
 set_target_properties(main PROPERTIES LINK_FLAGS "-L${SDL2_LIB}")
 
