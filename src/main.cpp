@@ -10,6 +10,7 @@ void (*fractal_arr[])(SDL_Renderer*) = {
 	koch_snowflake_line,
 	koch_snowflake_shape,
 	mandelbrot_set,
+	julia_set,
 	box_factal,
 	dragon_curve,
 	barnsley_fern,

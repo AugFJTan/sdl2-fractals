@@ -13,6 +13,7 @@ add_executable(main
                src/koch_snowflake_line.cpp
                src/koch_snowflake_shape.cpp
                src/mandelbrot_set.cpp
+               src/julia_set.cpp
                src/box_fractal.cpp
                src/dragon_curve.cpp
                src/barnsley_fern.cpp

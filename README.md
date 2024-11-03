@@ -14,10 +14,11 @@ Available fractals:
    - Line version
    - Shape version
 6. Mandelbrot set
-7. Box fractal
-8. Dragon curve
-9. Barnsley fern
-10. Gosper island
+7. Julia set
+8. Box fractal
+9. Dragon curve
+10. Barnsley fern
+11. Gosper island
 
 ## Building
 
