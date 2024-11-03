@@ -17,6 +17,7 @@ Available fractals:
 7. Box fractal
 8. Dragon curve
 9. Barnsley fern
+10. Gosper island
 
 ## Building
 

@@ -13,6 +13,7 @@ void (*fractal_arr[])(SDL_Renderer*) = {
 	box_factal,
 	dragon_curve,
 	barnsley_fern,
+	gosper_island,
 };
 
 void show_fractal(SDL_Renderer* renderer, int fractal_idx) {

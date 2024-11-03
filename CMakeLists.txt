@@ -15,7 +15,8 @@ add_executable(main
                src/mandelbrot_set.cpp
                src/box_fractal.cpp
                src/dragon_curve.cpp
-               src/barnsley_fern.cpp)
+               src/barnsley_fern.cpp
+               src/gosper_island.cpp)
 
 set_target_properties(main PROPERTIES LINK_FLAGS "-L${SDL2_LIB}")
 
