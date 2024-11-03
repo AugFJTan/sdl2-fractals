@@ -2,7 +2,7 @@
 #include <cmath>
 #include <vector>
 
-void segment(int iter, std::vector<SDL_FPoint> &points, SDL_FPoint v1, SDL_FPoint v2, float theta, float delta);
+static void segment(int iter, std::vector<SDL_FPoint> &points, SDL_FPoint v1, SDL_FPoint v2, float theta, float delta);
 
 void dragon_curve(SDL_Renderer* renderer) {
 	int length = 180;
@@ -35,7 +35,7 @@ void dragon_curve(SDL_Renderer* renderer) {
 	SDL_RenderDrawLinesF(renderer, points.data(), points.size());
 }
 
-void segment(int iter, std::vector<SDL_FPoint> &points, SDL_FPoint v1, SDL_FPoint v2, float theta, float delta) {
+static void segment(int iter, std::vector<SDL_FPoint> &points, SDL_FPoint v1, SDL_FPoint v2, float theta, float delta) {
 	if (iter == 12) {
 		points.push_back(v1);
 		return;

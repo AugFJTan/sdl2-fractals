@@ -1,7 +1,7 @@
 #include "fractals.h"
 #include <vector>
 
-void sierpinski(int iter, SDL_Renderer* renderer, SDL_FPoint pos, float length);
+static void sierpinski(int iter, SDL_Renderer* renderer, SDL_FPoint pos, float length);
 
 void sierpinski_carpet(SDL_Renderer* renderer) {
 	float length = 420.0;
@@ -29,7 +29,7 @@ void sierpinski_carpet(SDL_Renderer* renderer) {
 	sierpinski(0, renderer, v2, length);
 }
 
-void sierpinski(int iter, SDL_Renderer* renderer, SDL_FPoint pos, float length) {
+static void sierpinski(int iter, SDL_Renderer* renderer, SDL_FPoint pos, float length) {
 	if (iter == 5)
 		return;
 

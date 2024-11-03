@@ -2,7 +2,7 @@
 #include <cmath>
 #include <vector>
 
-void edge(int iter, std::vector<SDL_FPoint> &points, SDL_FPoint v1, SDL_FPoint v2, float theta);
+static void edge(int iter, std::vector<SDL_FPoint> &points, SDL_FPoint v1, SDL_FPoint v2, float theta);
 
 void koch_snowflake_line(SDL_Renderer* renderer) {
 	float hypotenuse = 360.0;
@@ -28,7 +28,7 @@ void koch_snowflake_line(SDL_Renderer* renderer) {
 	SDL_RenderDrawLinesF(renderer, points.data(), points.size());
 }
 
-void edge(int iter, std::vector<SDL_FPoint> &points, SDL_FPoint v1, SDL_FPoint v2, float theta) {
+static void edge(int iter, std::vector<SDL_FPoint> &points, SDL_FPoint v1, SDL_FPoint v2, float theta) {
 	if (iter == 4) {
 		points.push_back(v1);
 		return;

@@ -2,7 +2,7 @@
 #include <cstdlib>
 #include <ctime>
 
-SDL_FPoint transform_to_plot(SDL_FRect plot, SDL_FPoint p);
+static SDL_FPoint transform_to_plot(SDL_FRect plot, SDL_FPoint p);
 
 void barnsley_fern(SDL_Renderer* renderer) {
 	int max_iterations = 3000;
@@ -56,7 +56,7 @@ void barnsley_fern(SDL_Renderer* renderer) {
 	-2.2 <= x <=  2.7
 	 0.0 <= y <= 10.0
 */
-SDL_FPoint transform_to_plot(SDL_FRect plot, SDL_FPoint p) {
+static SDL_FPoint transform_to_plot(SDL_FRect plot, SDL_FPoint p) {
 	float scale = plot.h / 10.0;
 	SDL_FPoint q;
 	q.x = plot.x + plot.w / 2 + (p.x - 0.25) * scale;

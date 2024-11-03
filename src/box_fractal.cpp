@@ -1,7 +1,7 @@
 #include "fractals.h"
 #include <vector>
 
-void draw_pattern(int iter, SDL_Renderer* renderer, SDL_FPoint pos, float length);
+static void draw_pattern(int iter, SDL_Renderer* renderer, SDL_FPoint pos, float length);
 
 void box_factal(SDL_Renderer* renderer) {
 	float length = 420.0;
@@ -29,7 +29,7 @@ void box_factal(SDL_Renderer* renderer) {
 	draw_pattern(0, renderer, v2, length);
 }
 
-void draw_pattern(int iter, SDL_Renderer* renderer, SDL_FPoint pos, float length) {
+static void draw_pattern(int iter, SDL_Renderer* renderer, SDL_FPoint pos, float length) {
 	if (iter == 4)
 		return;
 

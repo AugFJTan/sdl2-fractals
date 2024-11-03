@@ -1,6 +1,6 @@
 #include "fractals.h"
 
-SDL_FPoint to_mandelbrot_scale(SDL_FPoint p);
+static SDL_FPoint to_mandelbrot_scale(SDL_FPoint p);
 
 void mandelbrot_set(SDL_Renderer* renderer) {
 	int max_iteration = 100;
@@ -31,7 +31,7 @@ void mandelbrot_set(SDL_Renderer* renderer) {
 	}
 }
 
-SDL_FPoint to_mandelbrot_scale(SDL_FPoint p) {
+static SDL_FPoint to_mandelbrot_scale(SDL_FPoint p) {
 	SDL_FPoint m;
 	m.x = -2.0 + p.x * 2.47 / SCREEN_WIDTH;
 	m.y = -1.12 + p.y * 2.24 / SCREEN_HEIGHT;

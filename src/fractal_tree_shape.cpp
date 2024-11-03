@@ -2,8 +2,8 @@
 #include <cmath>
 #include <vector>
 
-void draw_branch(SDL_Renderer* renderer, double theta, SDL_FPoint tip, float length, float width);
-void branch(int iter, SDL_Renderer* renderer, double theta, SDL_FPoint tip, float length, float width);
+static void draw_branch(SDL_Renderer* renderer, double theta, SDL_FPoint tip, float length, float width);
+static void branch(int iter, SDL_Renderer* renderer, double theta, SDL_FPoint tip, float length, float width);
 
 void fractal_tree_shape(SDL_Renderer* renderer) {
 	float length = 100.0;
@@ -21,7 +21,7 @@ void fractal_tree_shape(SDL_Renderer* renderer) {
 	branch(0, renderer, 0.0, tip, length * 0.8, width * 0.8);
 }
 
-void draw_branch(SDL_Renderer* renderer, double theta, SDL_FPoint tip, float length, float width) {
+static void draw_branch(SDL_Renderer* renderer, double theta, SDL_FPoint tip, float length, float width) {
 	SDL_FPoint v1 = {width / 2, -length / 2};
 	SDL_FPoint v2 = {-width / 2, -length / 2};
 	SDL_FPoint v3 = {-width / 2, length / 2};
@@ -54,7 +54,7 @@ void draw_branch(SDL_Renderer* renderer, double theta, SDL_FPoint tip, float len
 	SDL_RenderGeometry(renderer, nullptr, base.data(), base.size(), indices, 6);
 }
 
-void branch(int iter, SDL_Renderer* renderer, double theta, SDL_FPoint tip, float length, float width) {
+static void branch(int iter, SDL_Renderer* renderer, double theta, SDL_FPoint tip, float length, float width) {
 	if (iter == 7)
 		return;
 

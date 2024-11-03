@@ -1,7 +1,7 @@
 #include "fractals.h"
 #include <cmath>
 
-void branch(int iter, SDL_Renderer* renderer, double theta, SDL_FPoint tip, float length);
+static void branch(int iter, SDL_Renderer* renderer, double theta, SDL_FPoint tip, float length);
 
 void fractal_tree_line(SDL_Renderer* renderer) {
 	float length = 100.0;
@@ -20,7 +20,7 @@ void fractal_tree_line(SDL_Renderer* renderer) {
 	branch(0, renderer, 0.0, tip, length * 0.8);
 }
 
-void branch(int iter, SDL_Renderer* renderer, double theta, SDL_FPoint tip, float length) {
+static void branch(int iter, SDL_Renderer* renderer, double theta, SDL_FPoint tip, float length) {
 	if (iter == 7)
 		return;
 

@@ -2,7 +2,7 @@
 #include <cmath>
 #include <vector>
 
-void sierpinski(int iter, SDL_Renderer* renderer, SDL_FPoint v1, SDL_FPoint v2, SDL_FPoint v3);
+static void sierpinski(int iter, SDL_Renderer* renderer, SDL_FPoint v1, SDL_FPoint v2, SDL_FPoint v3);
 
 void sierpinski_triangle(SDL_Renderer* renderer) {
 	float hypotenuse = 500.0;
@@ -27,7 +27,7 @@ void sierpinski_triangle(SDL_Renderer* renderer) {
 	sierpinski(0, renderer, v1, v2, v3);
 }
 
-void sierpinski(int iter, SDL_Renderer* renderer, SDL_FPoint v1, SDL_FPoint v2, SDL_FPoint v3) {
+static void sierpinski(int iter, SDL_Renderer* renderer, SDL_FPoint v1, SDL_FPoint v2, SDL_FPoint v3) {
 	if (iter == 6)
 		return;
 

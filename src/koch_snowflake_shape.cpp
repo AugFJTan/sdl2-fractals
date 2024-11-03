@@ -2,7 +2,7 @@
 #include <cmath>
 #include <vector>
 
-void edge(int iter, SDL_Renderer* renderer, SDL_FPoint v1, SDL_FPoint v2, float theta);
+static void edge(int iter, SDL_Renderer* renderer, SDL_FPoint v1, SDL_FPoint v2, float theta);
 
 void koch_snowflake_shape(SDL_Renderer* renderer) {
 	float hypotenuse = 360.0;
@@ -29,7 +29,7 @@ void koch_snowflake_shape(SDL_Renderer* renderer) {
 	edge(0, renderer, v3, v1, -120 * M_PI / 180.0);
 }
 
-void edge(int iter, SDL_Renderer* renderer, SDL_FPoint v1, SDL_FPoint v2, float theta) {
+static void edge(int iter, SDL_Renderer* renderer, SDL_FPoint v1, SDL_FPoint v2, float theta) {
 	if (iter == 4)
 		return;
 
